@@ -1,0 +1,15 @@
+* b4dca5d Updated 9th branch
+*   f92c570 Merge pull request #11 from k-jovik/7-count-tasks-per-category
+|\  
+| * 151ee1e Updated 7th branch
+| * beb9044 Changes to branch 7
+* |   31e8885 Merge pull request #10 from k-jovik/1-remove-a-task-by-name
+|\ \  
+| |/  
+|/|   
+| * b1a59dd Remove a task by name
+|/  
+| * bd1c4a5 Updated 9th branch
+|/  
+* 04ec02a Add starter code
+* d27a595 Initial commit
