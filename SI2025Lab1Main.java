@@ -125,6 +125,12 @@ class TaskManager {
     public void markCategoryCompleted(String category) {
 
 	}
+	  for (Task task : tasks) {
+        if (task.getCategory().equalsIgnoreCase(category)) {
+            task.complete();
+        }
+    }
+    }
 }
 
 
