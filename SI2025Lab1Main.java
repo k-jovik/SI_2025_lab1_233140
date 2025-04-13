@@ -64,7 +64,16 @@ class TaskManager {
 
     // 1. Remove a task by name
     public void removeTask(String name) {
-        // TODO: Implement removal logic
+        Iterator<Task> iterator = tasks.iterator();
+        while (iterator.hasNext()) {
+            Task task = iterator.next();
+            if (task.getName().equals(name)) {
+                iterator.remove(); // Удалување на задачата
+                System.out.println("Task '" + name + "' removed.");
+                return;
+            }
+        }
+        System.out.println("Task with name '" + name + "' not found.");
     }
 
     // 2. Find all completed tasks
@@ -97,8 +106,14 @@ class TaskManager {
 
     // 7. Count tasks per category
     public Map<String, Integer> countTasksPerCategory() {
-        // TODO: Implement counting logic
-        return new HashMap<>();
+	Map<String, Integer> categoryCounts = new HashMap<>();
+
+    	for (Task task : tasks) {
+        	String category = task.getCategory();
+        	categoryCounts.put(category, categoryCounts.getOrDefault(category, 0) + 1);
+    	}
+
+    	return categoryCounts;
     }
 
     // 8. Mark a task as completed by name
@@ -108,13 +123,20 @@ class TaskManager {
 
     // 9. Mark all tasks in a category as completed
     public void markCategoryCompleted(String category) {
+
 	  for (Task task : tasks) {
         if (task.getCategory().equalsIgnoreCase(category)) {
             task.complete();
         }
     }
     }
+
+
+	}
 }
+
+
+
 
 public class SI2025Lab1Main {
     public static void main(String[] args) {
